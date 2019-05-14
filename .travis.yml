@@ -1,13 +1,13 @@
 language: go
 
 go:
-  - 1.x
+  - 1.12.x
 
 before_script:
-  - go vet ./...
+  - go get ./...
 
 script:
-  - go build -o tgmsg
+  - go build -ldflags "-s -w" -o tgmsg
 
 deploy:
   provider: releases

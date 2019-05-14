@@ -22,7 +22,7 @@ before_build:
   - go get ./...
 
 build_script:
-  - go build -o tgmsg.exe
+  - go build -ldflags "-s -w" -o tgmsg.exe
 
 artifacts:
   - path: tgmsg.exe
