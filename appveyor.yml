@@ -1,0 +1,40 @@
+version: 1.0.{build}
+
+platform: x64
+
+branches:
+  only:
+    - master
+
+clone_folder: C:\gopath\src\github.com\pshurgal\tgmsg
+
+environment:
+  GOPATH: c:\gopath
+
+install:
+  - echo %PATH%
+  - echo %GOPATH%
+  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
+  - go version
+  - go env
+
+before_build:
+  - go get ./...
+
+build_script:
+  - go build -o tgmsg.exe
+
+artifacts:
+  - path: tgmsg.exe
+
+deploy:
+  - provider: GitHub
+    auth_token:
+      secure: Le3rBEQiu1mo7mbhBBIWvLWtRnVZyt9r+/WBxAKAZ97nNH7OCNmHVZRC1zeYk+mU
+    artifact: tgmsg.exe
+    draft: false
+    prerelease: false
+    force_update: true
+    on:
+      branch: master
+      APPVEYOR_REPO_TAG: true
