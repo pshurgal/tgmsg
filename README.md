@@ -1,5 +1,6 @@
 # TGMSG
-Simple application that able to send a Telegram message from name of a bot
+This is a simple application that able to send a Telegram message on behalf of a bot
+
 ## Usage
 ```
 Usage:
