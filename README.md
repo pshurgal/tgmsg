@@ -1,5 +1,10 @@
 # TGMSG
+
+## Description
 This is a simple application that able to send a Telegram message on behalf of a bot
+
+## Build status
+[![Actions Status](https://github.com/pshurgal/tgmsg/workflows/Build/badge.svg?branch=master)](https://github.com/pshurgal/tgmsg/actions)
 
 ## Usage
 ```
@@ -17,8 +22,7 @@ Help Options:
   -h, --help                       Show this help message
 ```
 
-## Build status
-| Linux x64 | Windows x64 |
-| :---:     | :---:       |
-|[![Build Status](https://travis-ci.com/pshurgal/tgmsg.svg?branch=master)](https://travis-ci.com/pshurgal/tgmsg) | [![Build status](https://ci.appveyor.com/api/projects/status/1rj1an0f5uv8djpl/branch/master?svg=true)](https://ci.appveyor.com/project/pshurgal/tgmsg/branch/master) |
-| [Latest release binary](https://github.com/pshurgal/tgmsg/releases/latest/download/tgmsg ) | [Latest release binary](https://github.com/pshurgal/tgmsg/releases/latest/download/tgmsg.exe ) |
+## Download
+| Linux x64 | Windows x64 | MacOS x64 |
+| :---:     | :---:       | :---:     |
+| [Latest release binary](https://github.com/pshurgal/tgmsg/releases/latest/download/tgmsg-linux-amd64 ) | [Latest release binary](https://github.com/pshurgal/tgmsg/releases/latest/download/tgmsg-windows-amd64.exe ) | [Latest release binary](https://github.com/pshurgal/tgmsg/releases/latest/download/tgmsg-darwin-amd64 ) |

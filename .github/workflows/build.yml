@@ -1,0 +1,31 @@
+on: [push]
+
+name: Build
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        go-version: [1.13.x]
+        platform: 
+          - image: ubuntu-latest
+            goos: linux
+            goarch: amd64
+          - image: macos-latest
+            goos: darwin
+            goarch: amd64
+          - image: windows-latest
+            goos: windows
+            goarch: amd64
+    runs-on: ${{ matrix.platform.image }}
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@master
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@master
+    - name: Build
+      run: |
+        .github/scripts/build.sh ${{ matrix.platform.goos }} ${{ matrix.platform.goarch }}
+      shell: bash
